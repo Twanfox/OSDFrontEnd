@@ -1,0 +1,24 @@
+<UserControl x:Class="ConfigMgr_OSDFrontEnd.CmdAuthPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConfigMgr_OSDFrontEnd"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="650">
+    <Grid x:Name="ContentInnerGrid">
+        <StackPanel x:Name="CmdAuthStack" Background="#FF011841" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel.Effect>
+                <DropShadowEffect/>
+            </StackPanel.Effect>
+            <TextBlock FontSize="16" Foreground="Gold" Margin="10,10,10,0">Please enter the password for accessing the Command Prompt</TextBlock>
+            <TextBlock FontSize="16" Foreground="Gold" Margin="10,0,10,0">If you do not know the password, please contact a member of</TextBlock>
+            <TextBlock FontSize="16" Foreground="Gold" Margin="10,0,10,0">the Imaging Deployment Team.</TextBlock>
+            <PasswordBox x:Name="CmdPassword" Margin="10,30,10,0" Height="30" FontSize="16"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="CmdAuthPasswordOkButton" HorizontalAlignment="Right" Content="Ok" Margin="10" Width="75" Height="30" FontSize="16" IsDefault="{Binding IsChecked,ElementName=CmdAuthButton}"/>
+                <Button x:Name="CmdAuthPasswordCancelButton" HorizontalAlignment="Right" Content="Cancel" Margin="10" Width="75" Height="30" FontSize="16"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

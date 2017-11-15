@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns="">
+    <SCCM>
+        <!-- The server name of the site server to query for dynamically available packages -->
+        <Server></Server>
+        <!-- The site code of the site server -->
+        <SiteCode></SiteCode>
+        <!-- Access credentials for connecting to the site server. Keep in mind we will be in the PreExecution environment, -->
+        <!-- so no domain credentials will be available to us -->
+        <ReadOnlyUser>
+            <UserName></UserName>
+            <Password></Password>
+        </ReadOnlyUser>
+    </SCCM>
+    <AdvancedTools>
+        <!-- This password is encoded using the following PowerShell snippet -->
+        <!-- (-join ([Security.Cryptography.HashAlgorithm]::Create('SHA256').ComputeHash([System.Text.Encoding]::UTF8.GetBytes('Password')))) -->
+        <Password></Password>
+    </AdvancedTools>
+</Configuration>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TimeZones xmlns="">
+    <TimeZone>
+        <DisplayName>(GMT-04:00) Caracas, La Paz</DisplayName>
+        <Value>S.A. Western Standard Time</Value>
+    </TimeZone>
+    <TimeZone>
+        <DisplayName>(GMT-05:00) Eastern Time (US and Canada)</DisplayName>
+        <Value>Eastern Standard Time</Value>
+    </TimeZone>
+    <TimeZone>
+        <DisplayName>(GMT-06:00) Central Time (US and Canada)</DisplayName>
+        <Value>Central Standard Time</Value>
+        <Default/>
+    </TimeZone>
+    <TimeZone>
+        <DisplayName>(GMT-07:00) Mountain Time (US and Canada)</DisplayName>
+        <Value>Mountain Standard Time</Value>
+    </TimeZone>
+    <TimeZone>
+        <DisplayName>(GMT-07:00) Arizona</DisplayName>
+        <Value>U.S. Mountain Standard Time</Value>
+    </TimeZone>
+    <TimeZone>
+        <DisplayName>(GMT-08:00) Pacific Time (US and Canada); Tijuana</DisplayName>
+        <Value>Pacific Standard Time</Value>
+    </TimeZone>
+</TimeZones>

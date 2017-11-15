@@ -1,0 +1,81 @@
+﻿<Window x:Class="ConfigMgr_OSDFrontEnd.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConfigMgr_OSDFrontEnd"
+        xmlns:ee="http://schemas.microsoft.com/expression/2010/effects"
+        mc:Ignorable="d"
+        Title="OSD Front End" Height="768" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Top="50" WindowState="Maximized">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="b2v" />
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <LinearGradientBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                    <RotateTransform Angle="-50" CenterY="0.5" CenterX="0.5"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </LinearGradientBrush.RelativeTransform>
+            <GradientStop Color="#FF011841"/>
+            <GradientStop Color="#FF001740" Offset="1"/>
+            <GradientStop Color="#FF005595" Offset="0.808"/>
+            <GradientStop Color="#FF005595" Offset="0.192"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="275*"/>
+            <ColumnDefinition Width="719*"/>
+            <ColumnDefinition Width="275*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="257*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+        <Label x:Name="TitleLabel" Content="Operating System Deployment" Foreground="Gold" FontFamily="Times New Roman" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="SubtitleLabel" Content="Front End" Margin="0,-10,0,0" Foreground="LightGray" FontFamily="Times New Roman" FontSize="24" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Grid x:Name="ContentGrid" Grid.Column="1" Grid.Row="1" Margin="0,0,10,0" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel Orientation="Vertical">
+                <TextBlock TextWrapping="Wrap" FontSize="24" Foreground="Gold" Margin="10"><Run Text="If you are seeing this message, there was a problem starting up the OSD Front End and retrieving the external components required for it to function. Please check your network connectivity (some information is displayed for you in the bottom right) and try again."/></TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="24" Foreground="Gold" Margin="10"><Run Text="If this issue persists, please reach out to our Imaging Deployment Team and provide them the details of your deployment attempt, date and time of the attempt, the information found in the right information box, and the error messages listed below."/></TextBlock>
+                <Label x:Name="ErrorMessageLabel" Content="Error Message(s):" FontSize="16" Foreground="Gold" Margin="10"/>
+                <TextBlock x:Name="ErrorMessageText" TextWrapping="Wrap" FontSize="24" Foreground="Red" Background="Black" Margin="10,0,10,25"></TextBlock>
+                <Button x:Name="ConnectivityTestButton" Visibility="Collapsed" Content="Perform Connectivity Tests" HorizontalAlignment="Right" Margin="30,5" VerticalAlignment="Bottom" Height="30" Width="175"/>
+                <Button x:Name="PreLoadCancelButton" Content="Restart Computer" HorizontalAlignment="Right" Margin="30,5" VerticalAlignment="Bottom" Height="30" Width="125"/>
+            </StackPanel>
+        </Grid>
+        <GroupBox x:Name="SystemInfoGroup" Header="System Information" Margin="10,0,10,10" Foreground="Gold" FontSize="21.333" Grid.Row="2" Grid.Column="0" >
+            <StackPanel Orientation="Vertical">
+                <Label x:Name="SerialNumberLabel" Content="Serial Number" Margin="0,2,10,0" Foreground="Gold" VerticalAlignment="Top" FontSize="14.667"/>
+                <TextBox x:Name="SerialNumber" Text="(gwmi SerialNumber)" Margin="10,-5,10,0" Background="Transparent" BorderThickness="0"  Foreground="LightGray" VerticalAlignment="Top" FontSize="12" TextWrapping="Wrap" />
+                <Label x:Name="ManufacturerLabel" Content="Manufacturer" Margin="0,2,10,0" Foreground="Gold" VerticalAlignment="Top" FontSize="14.667"/>
+                <TextBox x:Name="Manufacturer" Text="(gwmi Manufacturer)" Margin="10,-5,10,0" Background="Transparent" BorderThickness="0"  Foreground="LightGray" VerticalAlignment="Top" FontSize="12" TextWrapping="Wrap" />
+                <Label x:Name="ModelNumberLabel" Content="Model Number" Margin="0,2,10,0" Foreground="Gold" VerticalAlignment="Top" FontSize="14.667"/>
+                <TextBox x:Name="ModelNumber" Text="(gwmi ModelNumber)" Margin="10,-5,10,0" Background="Transparent" BorderThickness="0"  Foreground="LightGray" VerticalAlignment="Top" FontSize="12" TextWrapping="Wrap" />
+                <Label x:Name="RAMInstalledLabel" Content="RAM Installed" Margin="0,2,10,0" Foreground="Gold" VerticalAlignment="Top" FontSize="14.667"/>
+                <TextBox x:Name="RAMInstalled" Text="(gwmi RAMInstalled)" Margin="10,-5,10,0" Background="Transparent" BorderThickness="0"  Foreground="LightGray" VerticalAlignment="Top" FontSize="12" TextWrapping="Wrap" />
+                <Label x:Name="NICAdapterLabel" Content="NIC Adapter" Margin="0,2,10,0" Foreground="Gold" VerticalAlignment="Top" FontSize="14.667"/>
+                <TextBox x:Name="NICAdapter" Text="(gwmi networkadapter)" Margin="10,-5,10,0" Background="Transparent" BorderThickness="0" Foreground="LightGray" VerticalAlignment="Top" FontSize="12" TextWrapping="Wrap" />
+                <Label x:Name="MACAddressLabel" Content="MAC Address" Margin="0,2,10,0" Foreground="Gold" VerticalAlignment="Top" FontSize="14.667"/>
+                <TextBox x:Name="MACAddress" Text="(gwmi macaddress)" Margin="10,-5,10,0" Background="Transparent" BorderThickness="0" Foreground="LightGray" VerticalAlignment="Top" FontSize="12" TextWrapping="Wrap" />
+                <Label x:Name="IPAddressLabel" Content="IP Address" Margin="0,2,10,0" Foreground="Gold" VerticalAlignment="Top" FontSize="14.667"/>
+                <TextBox x:Name="IPAddress" Text="(gwmi ipaddress)" Margin="10,-5,10,0" Background="Transparent" BorderThickness="0" Foreground="LightGray" VerticalAlignment="Top" FontSize="12" TextWrapping="Wrap" />
+                <Label x:Name="PowerStateLabel" Content="Power State" Margin="0,2,10,0" Foreground="Gold" VerticalAlignment="Top" FontSize="14.667"/>
+                <TextBox x:Name="PowerState" Text="(gwmi ipaddress)" Margin="10,-5,10,0" Background="Transparent" BorderThickness="0" Foreground="LightGray" VerticalAlignment="Top" FontSize="12" TextWrapping="Wrap" />
+                <Label x:Name="ResourceIDLabel" Content="SCCM Resource ID" Margin="0,2,10,0" Foreground="Gold" VerticalAlignment="Top" FontSize="14.667"/>
+                <TextBox x:Name="ResourceId" Text="Unknown" Margin="10,-5,10,0" Background="Transparent" BorderThickness="0" Foreground="LightGray" VerticalAlignment="Top" FontSize="12" TextWrapping="Wrap" />
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

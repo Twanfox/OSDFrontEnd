@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OrganizationalUnitMap>
+  <OrganizationalUnit>
+    <Name>Contoso</Name>
+    <ADDomainName>contoso.com</ADDomainName>
+    <DistinguishedName>dc=contoso,dc=com</DistinguishedName>
+    <Tooltip>Join the computer to the Contoso domain</Tooltip>
+    <HasAccess>False</HasAccess>
+    <TextColor>LightGray</TextColor>
+    <OrganizationalUnit>
+      <Name>Contoso</Name>
+      <DistinguishedName>ou=Contoso,dc=contoso,dc=com</DistinguishedName>
+      <TextColor>LightGray</TextColor>
+      <HasAccess>False</HasAccess>
+      <OrganizationalUnit>
+        <Name>Computers</Name>
+        <DistinguishedName>OU=Computers,ou=Contoso,dc=contoso,dc=com</DistinguishedName>
+        <TextColor>Black</TextColor>
+        <HasAccess>True</HasAccess>
+      </OrganizationalUnit>
+    </OrganizationalUnit>
+  </OrganizationalUnit>
+</OrganizationalUnitMap>
