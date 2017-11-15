@@ -1,0 +1,5 @@
+*.cer
+*.pfx
+Server Files/ContentPanelConfiguration.xml
+Server Files/OUStructuralMap.xml
+Server Files/Manifest.xml
